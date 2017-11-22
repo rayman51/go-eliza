@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url("https://chatbotsagency.files.wordpress.com/2017/03/eliza-header.png");
+
+}
+
+#ElizaTalks {
+    border: 1px solid #000;
+    text-align: center;
+    border-radius: 12px;
+    background-color: rgba(26, 197, 224, 0.52);
+    float: right;
+    width: auto;
+    padding:5px;
+}
+
+#UserTalks {
+    border: 1px solid #000;
+    text-align: center;
+    border-radius: 12px;
+    background-color: rgba(224, 26, 26, 0.52);
+    float: left;
+    width: auto;
+    margin-right:25px;
+    padding:5px;
+}
+
+h1 {
+    text-align:center;
+    color:black;
+}
+
+#Heading {
+    text-align:center;
+    color: black;
+}
+
+#inputbox {
+  position: fixed;
+  margin-bottom: 60px;
+  height: 50%;
+  width: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#chatbox {
+    position : relative;
+    bottom: 0;
+    text-align:left;
+    margin:auto auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:rgba(255, 248, 220, 0.6);
+    height:75%;
+    width:50%;
+    border:1px solid rgb(21, 22, 22);
+    overflow: scroll; 
+    border-radius: 25px;
+}
