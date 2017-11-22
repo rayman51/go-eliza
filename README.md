@@ -1,4 +1,4 @@
-# eliza_chatbot
+# ELIZA
 
 ## Intro
 
@@ -17,7 +17,9 @@ compiler on your computer and run the git clone command to pull the files from g
 Once you have installed the compiler, and have the files on your computer, open a command line of your choice. Next, navigate your way to the folder. Then run the command "go build" followed by the name of the go file(including the file extension) you wish to run.
 
 This will then create an executeable file of the same name, but with an ".exe" ententsion. Then simpily run the .exe file and the GO program will run.
+
 ![alt tag](https://github.com/rayman51/go-eliza/blob/master/images/Capture1.PNG)
+
 At this point a warning message may open telling you to allow firewall access. Then open a browser and enter the url "localhost8080" and the eliza home page is displayed. Then click the "start chat" button and you are directed to the eliza-chat page.
 
 ## The chat
