@@ -28,4 +28,4 @@ When the chat page opens you are presented with a text box and this is where you
 
 ![alt tag](https://github.com/rayman51/go-eliza/blob/master/images/shot.PNG)
 
-Then ask ELIZA any question you like and she will try and give a relevant response, bear in mind the program may will not be able to answer all your question correctly.
+Then ask ELIZA any question you like and she will try and give a relevant response, bear in mind the program may not be able to answer all your question correctly.
