@@ -1,4 +1,4 @@
-# ELIZA
+# ELIZA Go Lang Web Application
 
 ## Intro
 
