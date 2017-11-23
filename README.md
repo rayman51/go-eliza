@@ -20,9 +20,12 @@ This will then create an executeable file of the same name, but with an ".exe" e
 
 ![alt tag](https://github.com/rayman51/go-eliza/blob/master/images/Capture1.PNG)
 
-At this point a warning message may open telling you to allow firewall access. Then open a browser and enter the url "localhost8080" and the eliza home page is displayed. Then click the "start chat" button and you are directed to the eliza-chat page.
+At this point a warning message may open telling you to allow firewall access. Then open a browser and enter the url "localhost8080" and the ELIZA home page is displayed. Then click the "start chat" button and you are directed to the eliza-chat page.
 
 ## The chat
 
+When the chat page opens you are presented with a text box and this is where you type your question. Type your name and ELIZA will welcome you.
 
+[alt tag](https://github.com/rayman51/go-eliza/blob/master/images/shot.PNG)
 
+Then ask ELIZA any question you like and she will try and give a relevant response, bear in mind the program may will not be able to answer all your question correctly.
