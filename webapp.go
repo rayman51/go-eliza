@@ -1,5 +1,4 @@
 // Ray Mannion
-// G00340315
 // Data Representation & Query project
 // November 2017
 package main
