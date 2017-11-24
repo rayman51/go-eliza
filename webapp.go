@@ -228,14 +228,14 @@ var responses = [][]string{ // responses for chatbot
 		"I see.  And what does that tell you?",
 		"How does that make you feel?",
 		"How do you feel when you say that?"},
-}
+} // responses
 
 func templateHandler(w http.ResponseWriter, r *http.Request) { //Handle Http requests
 
-	t, _ := template.ParseFiles("chat/eliza.html") //Parse the template File
-	t.Execute(w, t)                                // Execute the Tmpl file
+	t, _ := template.ParseFiles("chat/eliza.html") //parse the template File
+	t.Execute(w, t)                                // execute the tmpl file
 
-}
+} //templateHandler
 
 func responseFromEliza(usersAnswer string) string {
 
@@ -244,48 +244,46 @@ func responseFromEliza(usersAnswer string) string {
 	for _, h := range responses {
 		row := 0
 		for {
-			row = rand.Intn(len(h)) //Find the length of the current row, Used for random row
+			row = rand.Intn(len(h)) //finds the length of the current row, Used for random row
 			if row != 0 {
 				break
 			}
 		}
-		re := regexp.MustCompile("(?i)" + responses[counter][0]) //Read the find index in the row - for the question
+		re := regexp.MustCompile("(?i)" + responses[counter][0]) //reads the find index in the row for the question
 
-		if matched := re.MatchString(usersAnswer); matched { //Compare question with the users input
-			return re.ReplaceAllString(usersAnswer, responses[counter][row]) //Replace the question with the answer for output
+		if matched := re.MatchString(usersAnswer); matched { //compares question with the users question
+			return re.ReplaceAllString(usersAnswer, responses[counter][row]) //replaces the question with the answer for output
 
 		}
-		counter++ //Increment the index
-	}
+		counter++ //Increment the count
+	} //for
 
-	//Catch all if loop Fails
-	answers := []string{
+	answers := []string{ // answers used if it can't find a match
 		"I’m not sure what you’re trying to say. Could you explain it to me?",
 		"How does that make you feel?",
 		"Why do you say that?",
-	}
+		"I don't understand, please elaborate?. ",
+	} // answers
 
-	return answers[rand.Intn(len(answers))] //Return random answer
+	return answers[rand.Intn(len(answers))] //returns a random answer if it can't find a match
 
-}
+} // responseFromEliza
 
 func receiveAjax(w http.ResponseWriter, r *http.Request) {
 
-	if r.Method == "POST" { //Post the users input
+	if r.Method == "POST" { //post the users input
 
-		Q := r.FormValue("Question") //Get the value from the input field
+		Q := r.FormValue("Question") //gets the input from the user
 
-		fmt.Fprintf(w, responseFromEliza(Q))
-
+		fmt.Fprintf(w, responseFromEliza(Q)) //prints response to screen
 	}
-}
+} // receiveAjax
 
 func Reflect(input string) string {
-	// Split the input on word boundaries.
+	// splits the input on word boundaries.
 	boundaries := regexp.MustCompile(`\b`)
 	tokens := boundaries.Split(input, -1)
 
-	// List the reflections.
 	reflections := [][]string{
 		{`I`, `you`},
 		{`me`, `you`},
@@ -295,7 +293,7 @@ func Reflect(input string) string {
 		{`Are`, `Am`},
 	}
 
-	// Loop through each token, reflecting it if there's a match.
+	// runs through each token, reflecting it if there's a match
 	for i, token := range tokens {
 		for _, reflection := range reflections {
 			if matched, _ := regexp.MatchString(reflection[0], token); matched {
@@ -305,13 +303,12 @@ func Reflect(input string) string {
 		}
 	}
 
-	// Put the tokens back together.
-	return strings.Join(tokens, ``)
-}
+	return strings.Join(tokens, ``) // puts the tokens back together
+} //Reflect
 func main() {
 
-	http.Handle("/", http.FileServer(http.Dir("./"))) //Handle http request
+	http.Handle("/", http.FileServer(http.Dir("./"))) //handle http request
 	http.HandleFunc("/chat", templateHandler)         //handle requests for templates
 	http.HandleFunc("/ajax", receiveAjax)
-	http.ListenAndServe(":8080", nil) //Listen and report from port 8080
-}
+	http.ListenAndServe(":8080", nil) //Listen and report from local port 8080
+} /// main
